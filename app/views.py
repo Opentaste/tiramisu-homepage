@@ -17,7 +17,7 @@ def index():
     """Render website's index page."""
     return render_template('index.html')
     
-@views.route('/docs/')
+@views.route('/docs')
 def docs():
     """Render documentation page."""
     return render_template('docs.html')
