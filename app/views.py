@@ -18,12 +18,12 @@ def index():
     """Render website's index page."""
     return render_template('index.html', **locals())
     
-@views.route('/docs/')
+@views.route('/docs')
 def docs():
     """Render documentation page."""
     return render_template('docs.html')
     
-@views.route('/customize_library/')
+@views.route('/customize_library')
 def customize_library():
     path = 'http://0.0.0.0:8080'
     static = 'http://0.0.0.0:8080/static'
