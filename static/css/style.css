@@ -385,3 +385,28 @@ ul#navbar a:hover {
     text-decoration: none;
     color: #e5ab63;
 }
+
+
+
+.custom_tiramisu {
+    margin:0 auto;
+    height:250px;
+    width:900px;
+}
+
+.custom_left {
+    float: left;
+    margin-left: 30px;
+    width: 300px;
+}
+
+.custom_left label {
+    background-color: #B8B79E;
+    color: #555555;
+    display:block;
+    cursor: pointer;
+    padding: 4px 8px 4px 20px;
+    margin:2px 0 4px 0;
+}
+
+

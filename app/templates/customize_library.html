@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block title %}A tasty JavaScript µLibrary{% endblock %}
+{% block description %}
+    Tiramisu is a tiny, modular and fast JavaScript library which takes 
+    inspiration from the famous jQuery syntax
+{% endblock %}
+
+{% block main %}
+    <section class="custom_tiramisu">
+        <div class="custom_left">
+            <h3>Selettori</h3>
+            <label>
+                <input type="checkbox" value="1" checked="checked">
+                Core Selector
+            </label>
+            <label>
+                <input type="checkbox" value="3" checked="checked">
+                Selector DOM
+            </label>
+            <label>
+                <input type="checkbox" value="5" checked="">
+                Selector Event
+            </label>
+        </div>
+        <div class="custom_left">
+            <h3>Altra roba</h3>
+            <label>
+                <input type="checkbox" value="2" checked="">
+                Browser Detect
+            </label>
+            <label>
+                <input type="checkbox" value="4" checked="">
+                Ajax
+            </label>
+            <label>
+                <input type="checkbox" value="6" checked="">
+                Task Engine
+            </label>
+        </div>
+        <span class="button_custom">A bello scarica!</span>
+    </section>
+{% endblock %}
+{% block js %}
+<script type="text/javascript">
+    var tiramisu_json = {
+        'tiramisu_size' : {{ tiramisu_json['tiramisu_size'] }},
+        'custom_size' : {
+            {% for key, value in tiramisu_json['custom_size'].iteritems() %}
+            {{ key }} : {{ value }},
+            {% endfor %}
+        },
+        'custom' : {
+            {% for key, value in tiramisu_json['custom'].iteritems() %}
+            {{ key }} : {{ value }},
+            {% endfor %}
+        }
+    }
+    t.get(d).ready(function(){
+        t.get('.button_custom').on('click', function(){
+            var list_input = t.get('.custom_left input');
+            var list_chosen = [];
+            for (var i=0; i<6; i++){
+                if (list_input[i].checked) {
+                    var j = i + 1;
+                    list_chosen.push(j);
+                }
+            }
+            var chosed = list_chosen.join('');
+            console.log(chosed);
+            var custom = tiramisu_json['custom'][chosed];
+            console.log(custom);
+            var size = tiramisu_json['custom_size'][custom];
+            console.log(size);
+        });
+    });
+</script>
+{% endblock %}

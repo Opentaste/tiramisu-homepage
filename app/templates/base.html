@@ -1,0 +1,154 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Tiramisu | {% block title %}{% endblock %}</title>
+    <meta name="description" content="{% block description %}{% endblock %}">
+    
+    
+    <meta name="author" content="Gianluca Bargelli and Leonardo Zizzamia">
+    <meta name="viewport" content="width=device-width">
+
+
+	<link rel="stylesheet" type="text/css" href="{{ path }}/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="{{ path }}/css/960_12_col.css">
+	<link rel="stylesheet" type="text/css" href="{{ path }}/css/text.css">
+	<link rel="stylesheet" type="text/css" href="{{ path }}/css/style.css">
+
+    <script src="{{ static }}/js/modernizr-1.7.min.js"></script>
+    <script type="text/javascript">var d = document;</script>
+</head>
+<body class="white_shadow">
+    
+	<div id="header">
+		<div class="container_12 clearfix">
+			<div class="logo grid_5 alpha">
+				<h1 class="dancing">Tiramisu</h1>
+				<img src="{{ static }}/img/logo.png" class="alpha grid_5" alt="A tasty JavaScript &#181;Library" />
+				<h2 class="smg">A tasty JavaScript &#181;Library</h2>
+			</div>
+			<div class="prefix_1 omega grid_6">
+				<p class="smg">Tiramisu is a <em>tiny</em>, <em>modular</em> and <em>fast</em> 
+					 JavaScript library which takes 
+					 inspiration from the famous  
+					 jQuery syntax:</p>
+				<pre class="black_shadow">
+tiramisu.get('h1').each(function() {
+    alert(h1.html());
+});</pre>
+			</div>
+		</div>
+	</div><!-- End #header -->
+	
+	<div class="sep_1"></div>
+	
+	<ul id="navbar">
+		<div class="container_12 clearfix">
+			<li><a href="#about">About</a></li>
+            <li><a href="https://github.com/OwlStudios/tiramisu">Clone on GitHub</a></li>
+            <li><a href="http://tiramisu-proudlygeek.dotcloud.com">Benchmarks</a></li>
+            <li><a href="{{ path }}/docs">Documentation</a></li>
+		</div>
+	</ul><!-- End #navbar -->
+	
+	<div class="sep_2"></div>
+	
+
+	<div id="main" class="main_shadow">
+        {% block main %}
+        {% endblock %}
+	</div><!-- End #main -->
+	
+	<div class="sep_3"></div>
+	
+	<div id="footer">
+		<div class="container_12 clearfix">
+			<div class="alpha grid_4 prefix_1 black_shadow">
+				<p class="smg"> Get a tasty slice of <span class="dancing">Tiramisu</span> </p>
+                <a href="https://github.com/OwlStudios/tiramisu/zipball/0.1.6" class="button">
+				    <p> Current Version: </p>
+                    <h1>0.1.6</h1>
+                    <span>Released February 05, 2012</span>
+				</a>
+		  </div>
+
+		  <div class="grid_2 black_shadow">
+		      <h2> Or </h2> 
+		  </div>
+
+		  <div class="omega grid_4 suffix_1 black_shadow">
+				<p class="smg"> Make your own <span class="dancing">Tiramisu</span> </p>
+				<a href="#" onclick="return false;" class="button disabled">
+					<h2> Coming Soon... </h2>
+				</a>
+		  </div>
+		</div>
+	</div><!-- End #footer -->
+	
+	<div class="sep_4"></div>
+
+	<div id="who">
+		<div class="container_12 clearfix">
+			<div class="grid_12 black_shadow">
+                <h1>Who's using <span class="dancing">Tiramisu</span>?</h1>
+				<a href="http://owlstudios.eu" class="who-logo owl">Owl Studios | Innovazione e Sviluppo software</a>
+				<a href="http://opentaste.eu" class="who-logo ot">OpenTaste | Condividi le tue ricette!</a>
+			</div>
+		</div>
+	</div><!-- End #who -->
+	
+	<div class="sep_4"></div>
+	
+	<div id="about">
+		<div class="container_12 clearfix">
+			<div class="grid_12 black_shadow">
+				<h1>About</h1>
+				<p>
+				    <span class="dancing">Tiramisu</span> is an <em>open source</em>, 
+				    <em>BSD-licensed</em> project currently developed by:
+				</p>
+				<a href="http://proudlygeek.appspot.com" class="developer">
+					<img src="{{ static }}/img/gianluca_pic.jpg" />
+					<p class="top"> Gianluca Bargelli </p>
+					<p class="bottom"> Freelance Web Developer </p>
+				</a>
+				<a href="http://www.linkedin.com/pub/leonardo-zizzamia/22/8a9/97" class="developer">
+					<img src="{{ static }}/img/leo_pic.jpg" />
+					<p class="top"> Leonardo Zizzamia </p>
+					<p class="bottom"> Web Developer @ Framestore </p>
+				</a>
+			</div>
+		</div>
+	</div><!-- End #about -->
+	
+	<div class="sep_4"></div>
+	
+	<div id="copyright">
+		<div class="container_12 clearfix black_shadow">
+			© 2011-2012 Gianluca Bargelli, Leonardo Zizzamia 
+		</div>
+	</div><!-- End #copyright -->
+	
+</body>
+    <script src="{{ static }}/js/tiramisu.js"></script>
+    {% block js %}{% endblock %}
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-5286378-4']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+</html>

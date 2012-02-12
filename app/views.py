@@ -6,21 +6,34 @@ application.
 """
 
 from google.appengine.api import mail
-
-from flask import Module, url_for, render_template, request, redirect
-
+from flask import Module, url_for, render_template, request, redirect, make_response
+import simplejson as json 
 views = Module(__name__, 'views')
-
 
 @views.route('/')
 def index():
-    """Render website's index page."""
-    return render_template('index.html')
+    path = 'http://0.0.0.0:8080'
+    static = 'http://0.0.0.0:8080/static'
     
-@views.route('/docs')
+    """Render website's index page."""
+    return render_template('index.html', **locals())
+    
+@views.route('/docs/')
 def docs():
     """Render documentation page."""
     return render_template('docs.html')
+    
+@views.route('/customize_library/')
+def customize_library():
+    path = 'http://0.0.0.0:8080'
+    static = 'http://0.0.0.0:8080/static'
+    
+    # read tiramisu.json
+    f = open('tiramisu.json', 'r')
+    tiramisu_json = json.load(f)
+    f.close()
+
+    return render_template('customize_library.html', **locals())
 
 
 @views.after_request
