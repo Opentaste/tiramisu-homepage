@@ -12,22 +12,18 @@ views = Module(__name__, 'views')
 
 @views.route('/')
 def index():
-    path = 'http://0.0.0.0:8080'
-    static = 'http://0.0.0.0:8080/static'
-    
     """Render website's index page."""
     return render_template('index.html', **locals())
     
+
 @views.route('/docs')
 def docs():
     """Render documentation page."""
     return render_template('docs.html')
     
+
 @views.route('/customize_library')
 def customize_library():
-    path = 'http://0.0.0.0:8080'
-    static = 'http://0.0.0.0:8080/static'
-    
     # read tiramisu.json
     f = open('tiramisu.json', 'r')
     tiramisu_json = json.load(f)
